@@ -12,11 +12,11 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      font-size: 17px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 18px;
       line-height: 1.7;
       color: #1a1a1a;
-      background: #fff;
+      background: #faf9f7;
       padding: 4rem 1.5rem;
     }
 
@@ -80,6 +80,11 @@
     }
     a:hover { text-decoration-color: #1a1a1a; }
 
+    /* ── Headings and metadata: keep sans-serif ── */
+    h1, h2, h1 + p, .page > p:last-child {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+
     /* ── Footer line ── */
     .page > p:last-child {
       margin-top: 3.5rem;
@@ -87,6 +92,23 @@
       color: #bbb;
     }
     .page > p:last-child em { font-style: normal; }
+
+    /* ── Source citations ── */
+    .sources {
+      display: block;
+      margin-top: 0.5rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+      color: #aaa;
+    }
+    .sources a {
+      color: #aaa;
+      text-decoration: none;
+      margin-right: 0.6rem;
+    }
+    .sources a:hover { color: #333; }
   </style>
 </head>
 <body>
