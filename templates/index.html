@@ -13,50 +13,58 @@
 
     body {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 18px;
-      line-height: 1.7;
-      color: #1a1a1a;
-      background: #faf9f7;
-      padding: 4rem 1.5rem;
+      font-size: 17px;
+      line-height: 1.75;
+      color: #111;
+      background: #fff;
+      padding: 3.5rem 1.5rem 6rem;
     }
 
     .page {
-      max-width: 660px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    /* ── Title ── */
+    /* ── Masthead ── */
     h1 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      padding-bottom: 1.1rem;
+      border-bottom: 2px solid #111;
     }
 
     /* Subtitle: *N stories · Curated DATE* */
     h1 + p {
-      margin-top: 0.35rem;
-      font-size: 0.8rem;
-      color: #aaa;
+      margin-top: 0.6rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #999;
     }
     h1 + p em { font-style: normal; }
 
     /* ── Section headers (Today / Top Stories) ── */
     h2 {
-      font-size: 0.65rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 0.6rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #bbb;
-      margin-top: 3rem;
-      margin-bottom: 1.5rem;
+      letter-spacing: 0.14em;
+      color: #aaa;
+      margin-top: 2.75rem;
+      margin-bottom: 1.1rem;
     }
 
     /* ── Dividers ── */
     hr {
       border: none;
-      border-top: 1px solid #efefef;
-      margin: 2rem 0;
+      border-top: 1px solid #e4e4e4;
+      margin: 1.75rem 0;
     }
 
     /* ── Body text ── */
@@ -74,21 +82,20 @@
     a {
       color: inherit;
       text-decoration: underline;
-      text-decoration-color: #ddd;
-      text-underline-offset: 3px;
-      transition: text-decoration-color 0.15s;
+      text-decoration-color: #ccc;
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.12s;
     }
-    a:hover { text-decoration-color: #1a1a1a; }
-
-    /* ── Headings and metadata: keep sans-serif ── */
-    h1, h2, h1 + p, .page > p:last-child {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    }
+    a:hover { text-decoration-color: #111; }
 
     /* ── Footer line ── */
     .page > p:last-child {
-      margin-top: 3.5rem;
-      font-size: 0.78rem;
+      margin-top: 4rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #e4e4e4;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
       color: #bbb;
     }
     .page > p:last-child em { font-style: normal; }
@@ -96,19 +103,19 @@
     /* ── Source citations ── */
     .sources {
       display: block;
-      margin-top: 0.5rem;
+      margin-top: 0.4rem;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-variant: small-caps;
       letter-spacing: 0.05em;
-      color: #aaa;
+      color: #bbb;
     }
     .sources a {
-      color: #aaa;
+      color: #bbb;
       text-decoration: none;
-      margin-right: 0.6rem;
+      margin-right: 0.5rem;
     }
-    .sources a:hover { color: #333; }
+    .sources a:hover { color: #111; }
   </style>
 </head>
 <body>
