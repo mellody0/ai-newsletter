@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distillation</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+      padding: 4rem 1.5rem;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    /* ── Title ── */
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    /* Subtitle: *N stories · Curated DATE* */
+    h1 + p {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    h1 + p em { font-style: normal; }
+
+    /* ── Section headers (Today / Top Stories) ── */
+    h2 {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #bbb;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Dividers ── */
+    hr {
+      border: none;
+      border-top: 1px solid #efefef;
+      margin: 2rem 0;
+    }
+
+    /* ── Body text ── */
+    p { margin-top: 1rem; }
+
+    /* ── Stories: suppress list decoration; numbers are already in the text ── */
+    ol {
+      list-style: none;
+      padding: 0;
+    }
+    ol li { margin-top: 0; }
+    ol li > p { margin-top: 0; }
+
+    /* ── Links ── */
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: #ddd;
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.15s;
+    }
+    a:hover { text-decoration-color: #1a1a1a; }
+
+    /* ── Footer line ── */
+    .page > p:last-child {
+      margin-top: 3.5rem;
+      font-size: 0.78rem;
+      color: #bbb;
+    }
+    .page > p:last-child em { font-style: normal; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    {{ content|safe }}
+  </div>
+</body>
+</html>
