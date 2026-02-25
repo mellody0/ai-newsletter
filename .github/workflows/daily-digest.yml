@@ -1,0 +1,50 @@
+name: Daily Digest
+
+on:
+  schedule:
+    # 9:00 AM EST = 14:00 UTC (handles EST; during EDT this fires at 10 AM ET)
+    - cron: "0 14 * * *"
+  workflow_dispatch: # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Write Google OAuth credentials
+        run: |
+          echo '${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}' > client_secret.json
+          echo '${{ secrets.GOOGLE_OAUTH_TOKEN }}' > token.json
+
+      - name: Generate digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python digest.py
+
+      - name: Publish to Google Docs
+        env:
+          GOOGLE_OAUTH_CLIENT_SECRET_FILE: client_secret.json
+          GOOGLE_TOKEN_FILE: token.json
+          GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
+        run: python publish_google.py
+
+      - name: Commit and push digest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add outputs/
+          git diff --cached --quiet || git commit -m "digest: $(date -u '+%Y-%m-%d')"
+          git push
